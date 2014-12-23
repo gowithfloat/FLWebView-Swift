@@ -1,11 +1,3 @@
-//
-//  AppDelegate.swift
-//  FLWebViewSwift
-//
-//  Created by Eric Busch on 12/2/14.
-//  Copyright (c) 2014 Float Mobile Learning. All rights reserved.
-//
-
 import UIKit
 
 @UIApplicationMain

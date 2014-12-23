@@ -1,21 +1,14 @@
-
-//
-//  UIWebView+FLUIWebView.swift
-//  FLWebViewSwift
-//
-//  Created by Eric Busch on 12/4/14.
-//  Copyright (c) 2014 Float Mobile Learning. All rights reserved.
-//
-
 import UIKit
 
 extension UIWebView: FLWebViewProvider {
 
+    // A simple convenience initializer, this allows for UIWebView(delegateView:) initialization
     convenience init(delegateView: UIWebViewDelegate) {
         self.init()
         self.delegate = delegateView
     }
     
+    // UIWebView has one delegate method so this is pretty straight forward
     func setDelegateViews(viewController: ViewController) {
         delegate = viewController
     }
@@ -28,6 +21,7 @@ extension UIWebView: FLWebViewProvider {
         return self.canGoForward
     }
     
+    // A quick method for loading requests based on strings in a URL format
     func loadRequestFromString(urlNameAsString: String!) {
         loadRequest(NSURLRequest(URL: NSURL(string: urlNameAsString)!))
     }
@@ -37,8 +31,10 @@ extension UIWebView: FLWebViewProvider {
     }
     
     func evaluateJavaScript(javascriptString: String!, completionHandler: (AnyObject, NSError) -> ()) {
+        // Have the WebView evaluate the javascript string
         var string = stringByEvaluatingJavaScriptFromString(javascriptString)
         
+        // Call the completion handler from there
         completionHandler(string!, NSError())
     }
     

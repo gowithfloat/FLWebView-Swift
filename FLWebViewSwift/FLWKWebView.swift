@@ -1,15 +1,12 @@
-//
-//  WKWebView+FLWKWebView.swift
-//  FLWebViewSwift
-//
-//  Created by Eric Busch on 12/4/14.
-//  Copyright (c) 2014 Float Mobile Learning. All rights reserved.
-//
-
 import UIKit
 import WebKit
 
 extension WKWebView: FLWebViewProvider {
+    
+    // Use associated objects to set and get the request ivar
+    func associatedObjectKey() -> String {
+        return "kAssociatedObjectKey"
+    }
     
     var request: NSURLRequest? {
         get {
@@ -20,21 +17,19 @@ extension WKWebView: FLWebViewProvider {
         }
     }
     
+    // A simple convenience initializer, this allows for WKWebView(delegateView:) initialization
     convenience init(delegateView: AnyObject) {
         self.init()
         self.UIDelegate = delegateView as? WKUIDelegate
         self.navigationDelegate = delegateView as? WKNavigationDelegate
     }
     
-    func associatedObjectKey() -> String {
-        return "kAssociatedObjectKey"
-    }
-    
+    // We will need to set both the UIDelegate AND navigationDelegate in the case of WebKit
     func setDelegateViews(viewController: ViewController) {
         self.UIDelegate = viewController as WKUIDelegate
         self.navigationDelegate = viewController as WKNavigationDelegate
     }
-    
+
     func URL() -> NSURL? {
         return self.URL
     }
@@ -43,10 +38,16 @@ extension WKWebView: FLWebViewProvider {
         return self.canGoBack
     }
     
+    func canGoForward() -> Bool {
+        return self.canGoForward
+    }
+    
+    // A quick method for loading requests based on strings in a URL format
     func loadRequestFromString(urlNameAsString: String!) {
         self.loadRequest(NSURLRequest(URL: NSURL(string: urlNameAsString)!))
     }
     
+    // Pass this up the chain and let WebKit handle it
     func evaluateJavaScript(javascriptString: String!, completionHandler: (AnyObject, NSError) -> ()) {
         self.evaluateJavaScript(javascriptString, completionHandler: { (AnyObject, NSError) -> Void in
             
