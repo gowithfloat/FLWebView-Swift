@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>AB272109-29B0-45FC-9499-4B3E36C73982</string>
+	<key>IDESourceControlProjectName</key>
+	<string>FLWebViewSwift</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>DE9429996F10DBE023B44FC68E820C0B345388E9</key>
+		<string>https://github.com/floatlearning/FLWebView-Swift.git</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>FLWebViewSwift.xcodeproj</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>DE9429996F10DBE023B44FC68E820C0B345388E9</key>
+		<string>../..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>https://github.com/floatlearning/FLWebView-Swift.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>111</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>DE9429996F10DBE023B44FC68E820C0B345388E9</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>DE9429996F10DBE023B44FC68E820C0B345388E9</string>
+			<key>IDESourceControlWCCName</key>
+			<string>FLWebView-Swift</string>
+		</dict>
+	</array>
+</dict>
+</plist>
