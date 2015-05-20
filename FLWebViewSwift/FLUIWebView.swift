@@ -13,11 +13,11 @@ extension UIWebView: FLWebViewProvider {
         delegate = viewController
     }
     
-    func canGoBack() -> Bool {
+    func canNavigateBackward() -> Bool {
         return self.canGoBack
     }
     
-    func canGoForward() -> Bool {
+    func canNavigateForward() -> Bool {
         return self.canGoForward
     }
     
@@ -26,11 +26,11 @@ extension UIWebView: FLWebViewProvider {
         loadRequest(NSURLRequest(URL: NSURL(string: urlNameAsString)!))
     }
     
-    func URL() -> NSURL? {
+    func currentURL() -> NSURL? {
         return self.request?.URL
     }
     
-    func evaluateJavaScript(javascriptString: String!, completionHandler: (AnyObject, NSError) -> ()) {
+    func evaluateJS(javascriptString: String!, completionHandler: (AnyObject, NSError) -> ()) {
         // Have the WebView evaluate the javascript string
         var string = stringByEvaluatingJavaScriptFromString(javascriptString)
         
