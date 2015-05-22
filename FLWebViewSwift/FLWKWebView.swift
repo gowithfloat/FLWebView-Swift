@@ -30,15 +30,15 @@ extension WKWebView: FLWebViewProvider {
         self.navigationDelegate = viewController as WKNavigationDelegate
     }
 
-    func URL() -> NSURL? {
+    func currentURL() -> NSURL? {
         return self.URL
     }
     
-    func canGoBack() -> Bool {
+    func canNavigateBackward() -> Bool {
         return self.canGoBack
     }
     
-    func canGoForward() -> Bool {
+    func canNavigateForward() -> Bool {
         return self.canGoForward
     }
     
@@ -48,7 +48,7 @@ extension WKWebView: FLWebViewProvider {
     }
     
     // Pass this up the chain and let WebKit handle it
-    func evaluateJavaScript(javascriptString: String!, completionHandler: (AnyObject, NSError) -> ()) {
+    func evaluateJS(javascriptString: String!, completionHandler: (AnyObject, NSError) -> ()) {
         self.evaluateJavaScript(javascriptString, completionHandler: { (AnyObject, NSError) -> Void in
             
         })

@@ -6,13 +6,13 @@ protocol FLWebViewProvider: class {
     
     var request: NSURLRequest? { get }
     
-    func URL() -> NSURL?
+    func currentURL() -> NSURL?
     
     func loadRequestFromString(urlNameAsString: String!)
     
-    func canGoBack() -> Bool
+    func canNavigateBackward() -> Bool
     
-    func canGoForward() -> Bool
+    func canNavigateForward() -> Bool
     
-    func evaluateJavaScript(javascriptString: String!, completionHandler: (AnyObject, NSError) -> ())
+    func evaluateJS(javascriptString: String!, completionHandler: (AnyObject, NSError) -> ())
 }
