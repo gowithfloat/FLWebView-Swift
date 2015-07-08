@@ -1,6 +1,7 @@
 import UIKit
 import WebKit
 
+@available(iOS 8.0, *)
 extension WKWebView: FLWebViewProvider {
     
     // Use associated objects to set and get the request ivar
@@ -13,7 +14,7 @@ extension WKWebView: FLWebViewProvider {
             return objc_getAssociatedObject(self, associatedObjectKey()) as? NSURLRequest
         }
         set(newValue) {
-            objc_setAssociatedObject(self, associatedObjectKey(), newValue, UInt(OBJC_ASSOCIATION_RETAIN_NONATOMIC))
+            objc_setAssociatedObject(self, associatedObjectKey(), newValue, objc_AssociationPolicy.OBJC_ASSOCIATION_RETAIN_NONATOMIC)
         }
     }
     
