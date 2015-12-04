@@ -32,10 +32,10 @@ extension UIWebView: FLWebViewProvider {
     
     func evaluateJS(javascriptString: String!, completionHandler: (AnyObject, NSError) -> ()) {
         // Have the WebView evaluate the javascript string
-        var string = stringByEvaluatingJavaScriptFromString(javascriptString)
+        let string = stringByEvaluatingJavaScriptFromString(javascriptString)
         
         // Call the completion handler from there
-        completionHandler(string!, NSError())
+        completionHandler(string!, NSError(coder: NSCoder())!)
     }
     
     func setScalesPageToFit(setPages: Bool!) {

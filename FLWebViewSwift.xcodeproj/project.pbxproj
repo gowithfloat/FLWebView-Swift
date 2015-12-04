@@ -169,6 +169,7 @@
 		ACEBA9B41A2ECE6C0095FB1B /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				LastSwiftUpdateCheck = 0700;
 				LastUpgradeCheck = 0610;
 				ORGANIZATIONNAME = "Float Mobile Learning";
 				TargetAttributes = {

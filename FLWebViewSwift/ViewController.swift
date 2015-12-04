@@ -9,7 +9,7 @@ class ViewController: UIViewController, UIWebViewDelegate, WKNavigationDelegate,
         super.viewDidLoad()
         
         // Check if WKWebView is available
-        if (NSClassFromString("WKWebView") != nil) {
+        if #available(iOS 8.0, *) {
             let w = WKWebView(delegateView: self)
             w.frame = self.view.frame
             self.webView = w
