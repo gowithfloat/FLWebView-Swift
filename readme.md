@@ -1,8 +1,8 @@
-# [FLWebView-Swift](https://github.com/floatlearning/FLWebView-Swift) [![Build Status](https://travis-ci.org/floatlearning/FLWebView-Swift.svg)](https://travis-ci.org/floatlearning/FLWebView-Swift)
+# [FLWebView-Swift](https://github.com/gowithfloat/FLWebView-Swift) [![Build Status](https://travis-ci.org/gowithfloat/FLWebView-Swift.svg)](https://travis-ci.org/gowithfloat/FLWebView-Swift)
 
-*Note: This repository was written in Swift. An Objective-C version is [available here](https://github.com/floatlearning/FLWebView).*
+*Note: This repository was written in Swift. An Objective-C version is [available here](https://github.com/gowithfloat/FLWebView).*
 
-A Swift version of the Objective-C [FLWebView](https://github.com/floatlearning/FLWebView) project.
+A Swift version of the Objective-C [FLWebView](https://github.com/gowithfloat/FLWebView) project.
 
 # License
 
