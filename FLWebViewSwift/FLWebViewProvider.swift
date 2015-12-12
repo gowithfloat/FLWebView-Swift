@@ -10,9 +10,10 @@ protocol FLWebViewProvider: class {
     
     func loadRequestFromString(urlNameAsString: String!)
     
-    func canNavigateBackward() -> Bool
+    func canNavigateBack() -> Bool
     
     func canNavigateForward() -> Bool
     
-    func evaluateJS(javascriptString: String!, completionHandler: (AnyObject, NSError) -> ())
+    func evaluateJavaScriptString(javascriptString: String!, completionHandler: (AnyObject?, NSError?) -> ())
+    
 }
