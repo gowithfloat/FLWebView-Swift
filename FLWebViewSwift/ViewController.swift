@@ -4,33 +4,26 @@ import WebKit
 class ViewController: UIViewController, UIWebViewDelegate, WKNavigationDelegate, WKUIDelegate {
 
     var webView: FLWebViewProvider?
-
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        
+    
+    override func viewDidAppear(animated: Bool) {
+        super.viewDidAppear(animated)
         // Check if WKWebView is available
         if #available(iOS 8.0, *) {
             let w = WKWebView(delegateView: self)
-            w.frame = self.view.frame
+            w.frame = CGRect(origin: CGPointZero, size: self.view.frame.size)
             self.webView = w
-            self.view.addSubview(self.webView as! WKWebView)
         } else {
-            // In this case we have to fall back on UIWebView
+            // Fallback on earlier versions
             let w = UIWebView(delegateView: self)
-            w.frame = self.view.frame
+            w.frame = CGRect(origin: CGPointZero, size: self.view.frame.size)
             self.webView = w
-            self.view.addSubview(self.webView as! UIWebView)
         }
         
+        self.view.addSubview(self.webView as! UIView)
+        
         // Load a page, in this case we will load our favorite website
-        self.webView?.loadRequestFromString("https://www.google.com/")
+        self.webView?.loadRequestFromString("http://www.gowithfloat.com")
     }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-
 
 }
 

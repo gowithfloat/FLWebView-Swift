@@ -13,7 +13,7 @@ extension UIWebView: FLWebViewProvider {
         delegate = viewController
     }
     
-    func canNavigateBackward() -> Bool {
+    func canNavigateBack() -> Bool {
         return self.canGoBack
     }
     
@@ -30,12 +30,15 @@ extension UIWebView: FLWebViewProvider {
         return self.request?.URL
     }
     
-    func evaluateJS(javascriptString: String!, completionHandler: (AnyObject, NSError) -> ()) {
+    func evaluateJavaScriptString(javascriptString: String!, completionHandler: (AnyObject?, NSError?) -> ()) {
         // Have the WebView evaluate the javascript string
-        let string = stringByEvaluatingJavaScriptFromString(javascriptString)
+        guard let string = stringByEvaluatingJavaScriptFromString(javascriptString) else {
+            completionHandler(nil, nil)
+            return
+        }
         
         // Call the completion handler from there
-        completionHandler(string!, NSError(domain: "FLWebView", code: 200, userInfo: nil))
+        completionHandler(string, nil)
     }
     
     func setScalesPageToFit(setPages: Bool!) {
