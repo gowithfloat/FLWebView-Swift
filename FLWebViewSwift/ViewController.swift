@@ -23,7 +23,7 @@ class ViewController: UIViewController, UIWebViewDelegate, WKNavigationDelegate,
         }
         
         // Load a page, in this case we will load our favorite website
-        self.webView?.loadRequestFromString("https://www.google.com/")
+        self.webView?.loadRequestFromString(urlNameAsString: "https://www.google.com/")
     }
 
     override func didReceiveMemoryWarning() {
