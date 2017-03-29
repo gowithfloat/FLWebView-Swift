@@ -4,9 +4,9 @@ protocol FLWebViewProvider: class {
     
     func setDelegateViews(viewController: ViewController)
     
-    var request: NSURLRequest? { get }
+    var request: URLRequest? { get }
     
-    func currentURL() -> NSURL?
+    func currentURL() -> URL?
     
     func loadRequestFromString(urlNameAsString: String!)
     

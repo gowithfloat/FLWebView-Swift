@@ -9,9 +9,9 @@ extension WKWebView: FLWebViewProvider {
         return "kAssociatedObjectKey"
     }
     
-    var request: NSURLRequest? {
+    var request: URLRequest? {
         get {
-            return objc_getAssociatedObject(self, associatedObjectKey()) as? NSURLRequest
+            return objc_getAssociatedObject(self, associatedObjectKey()) as? URLRequest
         }
         set(newValue) {
             objc_setAssociatedObject(self, associatedObjectKey(), newValue, .OBJC_ASSOCIATION_RETAIN_NONATOMIC)
@@ -21,18 +21,18 @@ extension WKWebView: FLWebViewProvider {
     // A simple convenience initializer, this allows for WKWebView(delegateView:) initialization
     convenience init(delegateView: AnyObject) {
         self.init()
-        self.UIDelegate = delegateView as? WKUIDelegate
+        self.uiDelegate = delegateView as? WKUIDelegate
         self.navigationDelegate = delegateView as? WKNavigationDelegate
     }
     
     // We will need to set both the UIDelegate AND navigationDelegate in the case of WebKit
     func setDelegateViews(viewController: ViewController) {
-        self.UIDelegate = viewController as WKUIDelegate
+        self.uiDelegate = viewController as WKUIDelegate
         self.navigationDelegate = viewController as WKNavigationDelegate
     }
 
-    func currentURL() -> NSURL? {
-        return self.URL
+    func currentURL() -> URL? {
+        return self.url
     }
     
     func canNavigateBackward() -> Bool {
@@ -45,7 +45,7 @@ extension WKWebView: FLWebViewProvider {
     
     // A quick method for loading requests based on strings in a URL format
     func loadRequestFromString(urlNameAsString: String!) {
-        self.loadRequest(NSURLRequest(URL: NSURL(string: urlNameAsString)!))
+        _ = self.load(URLRequest(url: URL(string: urlNameAsString)!))
     }
     
     // Pass this up the chain and let WebKit handle it

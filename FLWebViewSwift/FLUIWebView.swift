@@ -23,19 +23,19 @@ extension UIWebView: FLWebViewProvider {
     
     // A quick method for loading requests based on strings in a URL format
     func loadRequestFromString(urlNameAsString: String!) {
-        loadRequest(NSURLRequest(URL: NSURL(string: urlNameAsString)!))
+        loadRequest(URLRequest(url: URL(string: urlNameAsString)!))
     }
     
-    func currentURL() -> NSURL? {
-        return self.request?.URL
+    func currentURL() -> URL? {
+        return self.request?.url
     }
     
     func evaluateJS(javascriptString: String!, completionHandler: (AnyObject, NSError) -> ()) {
         // Have the WebView evaluate the javascript string
-        let string = stringByEvaluatingJavaScriptFromString(javascriptString)
+      guard let string = stringByEvaluatingJavaScript(from: javascriptString) else { return }
         
         // Call the completion handler from there
-        completionHandler(string!, NSError(domain: "FLWebView", code: 200, userInfo: nil))
+        completionHandler(string as AnyObject, NSError(domain: "FLWebView", code: 200, userInfo: nil))
     }
     
     func setScalesPageToFit(setPages: Bool!) {
